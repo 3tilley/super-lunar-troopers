@@ -6,9 +6,16 @@ import random
 if not pygame.font:
     raise RuntimeError("Install pygame.font")
 
+def boukie_function(x, y):
+    """Fill a circle at a point x,y"""
+    # Boukie fill this in
+
+
 def main():
     pygame.init()
-    screen = pygame.display.set_mode((400,400))
+    width = 400
+    height = 400
+    screen = pygame.display.set_mode((width,height))
     pygame.display.set_caption("Super Lunar Troopers")
     # pygame.mouse.set_visible(0)
 
@@ -32,7 +39,12 @@ def main():
 
                 colours = [random.randint(0,250) for i in range(3)]
                 background.fill(tuple(colours))
-            
+
+            elif event.type == KEYUP:
+                w = random.randint(0, width)
+                h = random.randint(0, height)
+                boukie_function(w, h)
+
             background.blit(text, textpos)
             screen.blit(background, (0, 0))
             pygame.display.flip()
